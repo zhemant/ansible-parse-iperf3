@@ -1,0 +1,13 @@
+- hosts: localhost
+  gather_facts: no
+  tasks:
+  - name: Test that my module works
+    parse_iperf3:
+      dest: 127.0.0.1
+      #udp: true
+      #reverse: true
+    register: result
+
+  - debug:
+      msg:
+      - "{{ result }}"
